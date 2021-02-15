@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 def upload_to(instance, filename):
-    return 'profiles/{filename}'.format(filename=filename)
+    return 'products/{filename}'.format(filename=filename)
 
 
 class Category(models.Model):

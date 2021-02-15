@@ -116,6 +116,8 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['0.0.0.0', '192.168.1.4', '127.0.0.1']
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
