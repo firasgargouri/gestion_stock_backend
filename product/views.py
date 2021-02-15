@@ -35,3 +35,25 @@ class ProductCreate(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class CategoryCreate(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request, format=None):
+        serializer = CategorySerializer(data=request.data)
+        if(serializer.is_valid()):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SubCategoryCreate(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request, format=None):
+        serializer = SubCategorySerializer(data=request.data)
+        if(serializer.is_valid()):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
